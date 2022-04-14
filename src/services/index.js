@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:8080'
+const baseUrl = process.env.REACT_APP_API_URL;
 
 const getRestaurants = async () => {
   const response = await axios.get(baseUrl + '/restaurants')
