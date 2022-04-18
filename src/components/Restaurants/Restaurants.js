@@ -6,6 +6,7 @@ import './Restaurants.css'
 const { initializeRestaurants } = actions
 
 const Restaurants = () => {
+
   const dispatch = useDispatch()
   useEffect(() => {
     const initialize = async () => {
