@@ -31,6 +31,7 @@ const CreateReview = () => {
 
     const newReview = await createNewReview(review)
     dispatch(newReview)
+    setRating(false)
     setReviewText('')
   }
 

@@ -2,10 +2,17 @@ import { useDispatch } from 'react-redux'
 import actions from '../../store/actions'
 import './CreateRestaurant.css'
 import { useState } from 'react'
+import AddRestaurantNotification from '../AddRestaurantNotification/AddRestaurantNotification.js'
 
-const { createNewRestaurant } = actions
+const { createNewRestaurant, displayRestaurantNotification } = actions
 
 const CreateRestaurant = () => {
+
+  const [show, setShow] = useState(false)
+  const onAddChange = (event) => {
+    setShow(event)
+  }
+
   const [addName, setAddName] = useState('')
   const onNameChange = (event) => {
     setAddName(event.target.value)
@@ -50,6 +57,7 @@ const CreateRestaurant = () => {
     console.log(restaurant)
     const newRestaurant = await createNewRestaurant(restaurant)
     dispatch(newRestaurant)
+    dispatch(displayRestaurantNotification())
     setAddName('')
     setAddress('')
     setCity('')
@@ -61,6 +69,7 @@ const CreateRestaurant = () => {
   return (
     <div className="add-container">
       <div className="add-container-text">
+        <AddRestaurantNotification />
         <h2>Add a New Restaurant</h2>
       </div>
       <form className="add-container-form" onSubmit={addRestaurant}>
@@ -83,7 +92,7 @@ const CreateRestaurant = () => {
           <label htmlFor="phone">Phone Number</label>
           <input onChange={onPhoneChange} value={addPhone} name="phone" id="phone" placeholder="Phone Number" />
 
-          <button type="submit">Add</button>
+          <button onChange={onAddChange} value={show} type="submit">Add</button>
         </div>
       </form>
     </div>
