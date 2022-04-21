@@ -3,13 +3,12 @@ import thunk from 'redux-thunk'
 // import { composeWithDevTools } from 'redux-devtools-extension'
 import reducers from './store/reducers'
 
-const { restaurants, reviews, search, notification } = reducers
+const { restaurants, reviews, search } = reducers
 
 const reducer = combineReducers({
   restaurants,
   reviews,
-  search,
-  notification
+  search
 })
 
 const store = createStore(
