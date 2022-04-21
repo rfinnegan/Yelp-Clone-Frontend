@@ -6,7 +6,6 @@ import './Restaurants.css'
 const { initializeRestaurants } = actions
 
 const Restaurants = () => {
-
   const dispatch = useDispatch()
   useEffect(() => {
     const initialize = async () => {
@@ -25,8 +24,8 @@ const Restaurants = () => {
           <div className="restaurants-content">
             {restaurants.map(restaurant => 
               <div key={restaurant.id}>
-                <div>
-                  <a href={`/restaurants/${restaurant.id}`}>{restaurant.name}</a>
+                <div className="show-restaurants">
+                <a href={`/restaurants/${restaurant.id}`}>{restaurant.name}</a>
                 </div>
               </div>
             )}
