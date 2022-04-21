@@ -8,9 +8,9 @@ const { createNewReview } = actions
 
 const CreateReview = () => {
   const [rating, setRating] = useState(false)
-  const onRatingChange = (event) => {
-    setRating(event.target.value)
-  }
+    const onRatingChange = (event) => {
+      setRating(event.target.value)
+    }
 
   const [reviewText, setReviewText] = useState('')
   const onReviewTextChange = (event) => {
@@ -42,25 +42,60 @@ const CreateReview = () => {
           <div className="rating-container">
             <label htmlFor="rating">Rating</label>
 
-            <input type="radio" id="1" name="rating" value="1" onChange={onRatingChange}></input>
+            <input 
+            onChange={onRatingChange}
+            checked={rating === '1'}
+            type="radio"
+            id="1"
+            name="rating"
+            value="1"></input>
             <label htmlFor="1">1</label>
 
-            <input type="radio" id="2" name="rating" value="2" onChange={onRatingChange} ></input>
+            <input
+            onChange={onRatingChange}
+            checked={rating === '2'}
+            type="radio"
+            id="2"
+            name="rating"
+            value="2"></input>
             <label htmlFor="2">2</label>
 
-            <input type="radio" id="3" name="rating" value="3" onChange={onRatingChange}></input>
+            <input
+            onChange={onRatingChange}
+            checked={rating === '3'}
+            type="radio"
+            id="3"
+            name="rating"
+            value="3"></input>
             <label htmlFor="3">3</label>
 
-            <input type="radio" id="4" name="rating" value="4" onChange={onRatingChange}></input>
+            <input
+            onChange={onRatingChange}
+            checked={rating === '4'}
+            type="radio"
+            id="4"
+            name="rating"
+            value="4"></input>
             <label htmlFor="4">4</label>
 
-            <input type="radio" id="5" name="rating" value="5" onChange={onRatingChange}></input>
+            <input
+            onChange={onRatingChange}
+            checked={rating === '5'}
+            type="radio"
+            id="5"
+            name="rating"
+            value="5"></input>
             <label htmlFor="5">5</label>
           </div>
 
           <div className="create-review-textarea-container">
             <label htmlFor="review"></label>
-            <textarea onChange={onReviewTextChange} value={reviewText} name="review" id="review" placeholder="Leave a review" />
+            <textarea
+            onChange={onReviewTextChange}
+            value={reviewText}
+            name="review"
+            id="review"
+            placeholder="Leave a review" />
           </div>
 
           <button className="add-review-button" type="submit">Post Review</button>
