@@ -1,6 +1,5 @@
-import Restaurants from '../../components/Restaurants/Restaurants'
-import CreateRestaurant from '../../components/createRestaurant/CreateRestaurant'
 import Search from '../../components/Search/Search'
+import ToggleRestaurants from '../../components/ToggleRestaurants'
 import './Home.css'
 
 const Home = () => {
@@ -8,6 +7,7 @@ const Home = () => {
     <div className="home-container">
       <h1>Yelp Clone</h1>
       <Search />
+      <ToggleRestaurants />
     </div>
   )
 }
